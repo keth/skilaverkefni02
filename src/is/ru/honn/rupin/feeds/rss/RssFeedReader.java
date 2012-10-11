@@ -1,17 +1,17 @@
 package is.ru.honn.rupin.feeds.rss;
 
-import java.net.URL;
-import java.net.MalformedURLException;
-import java.util.Iterator;
-import java.util.List;
-
-import com.sun.syndication.io.SyndFeedInput;
-import com.sun.syndication.io.XmlReader;
 import com.sun.syndication.feed.synd.SyndEntry;
 import com.sun.syndication.feed.synd.SyndFeed;
+import com.sun.syndication.io.SyndFeedInput;
+import com.sun.syndication.io.XmlReader;
 import is.ru.honn.rupin.feeds.AbstractFeedReader;
 import is.ru.honn.rupin.feeds.FeedEntry;
 import is.ru.honn.rupin.feeds.FeedException;
+
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.Iterator;
+import java.util.List;
 
 public class RssFeedReader extends AbstractFeedReader
 {
