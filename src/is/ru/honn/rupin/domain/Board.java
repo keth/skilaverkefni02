@@ -12,7 +12,7 @@ public class Board extends PinObject
   public Board()
   {
   }
-
+             //
   public Board(String name, String category)
   {
     this.name = name;
