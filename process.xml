@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="processContext" class="is.ruframework.process.RuProcessContext">
+        <property name="processName">
+            <value>PinImportProcess</value>
+        </property>
+        <property name="importURL">
+            <value>http://feeds.bbci.co.uk/news/technology/rss.xml</value>
+        </property>
+        <property name="processClass">
+            <value>is.ru.honn.rupin.process.PinImportProcess</value>
+        </property>
+    </bean>
+</beans>
