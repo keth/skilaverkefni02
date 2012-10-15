@@ -10,7 +10,7 @@ public class PinServiceStub implements PinService
   protected List<Board> boards = new ArrayList<Board>();
   protected List<User> users = new ArrayList<User>();
 
-  @Override
+  //@Override
   public User signUpUser(String username, String firstName, String lastName, String email,
                          String password, Gender gender)
       throws UsernameExistsException
@@ -22,7 +22,7 @@ public class PinServiceStub implements PinService
     return newUser;
   }
 
-  @Override
+  //@Override
   public User getUser(String username)
   {
     for(User u : users)
@@ -33,7 +33,7 @@ public class PinServiceStub implements PinService
     return null;
   }
 
-  @Override
+  //@Override
   public Board createBoard(String username, String name, String category)
       throws UserNotFoundException
   {
@@ -48,7 +48,7 @@ public class PinServiceStub implements PinService
     return newBoard;
   }
 
-  @Override
+  //@Override
   public Pin createPin(String username, String boardname, String link, String description) throws BoardNotFoundException
   {
     Pin newPin = new Pin();
@@ -62,7 +62,7 @@ public class PinServiceStub implements PinService
     return newPin;
   }
 
-  @Override
+  //@Override
   public Board getBoard(String username, String boardname)
   {
     List<Board> userBoards = getBoards(username);
@@ -73,7 +73,7 @@ public class PinServiceStub implements PinService
     return null;
   }
 
-  @Override
+  //@Override
   public List<Board> getBoards(String username)
   {
     List<Board> userBoards = new ArrayList<Board>();
@@ -85,7 +85,7 @@ public class PinServiceStub implements PinService
     return userBoards;
   }
 
-  @Override
+  //@Override
   public List<Pin> getPinsOnBoard(String username, String boardname)
   {
     List<Pin> pinsOnBoard = new ArrayList<Pin>();
