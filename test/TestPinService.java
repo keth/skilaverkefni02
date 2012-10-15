@@ -14,7 +14,7 @@ public class TestPinService extends TestCase {
     private PinService pinService = new PinServiceStub();
 
     private String username = "user01";
-    private String firstName = "John";
+    private String firstName = "Bob";
     private String lastName = "Lennon";
     private String email = "john@heven.is";
     private String password = "password123";
