@@ -25,9 +25,9 @@ public class TestPinService extends TestCase {
             pinService.signUpUser(username, firstName, lastName, email, password, gender);
             Assert.assertNotNull(username);
             pinService.signUpUser(username, firstName, lastName, email, password, gender);
-            fail("Exception was not thrown");
+            fail("UsernameExistsException was not thrown");
         } catch (UsernameExistsException e) {
-            // Success!   //todo: skoða http://www.exubero.com/junit/antipatterns.html
+            // Success!   //todo: skoða hvort þetta sé ekki rétt http://www.exubero.com/junit/antipatterns.html
         }
     }
 

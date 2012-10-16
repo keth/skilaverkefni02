@@ -4,6 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="processContext" class="is.ruframework.process.RuProcessContext">
+
         <property name="processName">
             <value>PinImportProcess</value>
         </property>
@@ -14,4 +15,39 @@
             <value>is.ru.honn.rupin.process.PinImportProcess</value>
         </property>
     </bean>
+
+    <bean id="userBean" class="is.ru.honn.rupin.domain.User">
+        <property name="username">
+            <value>User01</value>
+        </property>
+        <property name="firstName">
+            <value>Hattur</value>
+        </property>
+        <property name="lastName">
+            <value>Fattur</value>
+        </property>
+        <property name="email">
+            <value>hattu@fattur.is</value>
+        </property>
+        <property name="password">
+            <value>password123</value>
+        </property>
+        <property name="gender">
+            <value>MALE</value>
+        </property>
+    </bean>
+
+    <bean id="boardBean" class="is.ru.honn.rupin.domain.Board">
+        <property name="name">
+            <value>User01</value>
+        </property>
+        <property name="category">
+            <value>Technology</value>
+        </property>
+        <property name="pins">
+            <value>pins????????????????????</value>
+        </property>
+    </bean>
+
+
 </beans>
