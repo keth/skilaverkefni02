@@ -66,7 +66,7 @@ public class PinImportProcess extends RuAbstractProcess implements FeedHandler {
 
     public void processEntry(FeedEntry entry) {
         try {
-            pinService.createPin(user.getUsername(), board.getName(), "www.mbl.is", "description");
+            pinService.createPin(user.getUsername(), board.getName(), entry.getLink(), entry.getDescription());
         } catch (BoardNotFoundException e) {
             e.printStackTrace();
         }
@@ -82,7 +82,10 @@ public class PinImportProcess extends RuAbstractProcess implements FeedHandler {
         try {
             reader.read();
         } catch (FeedException e) {
-            e.printStackTrace();
+            log.info(msg.getMessage("processreaderror",
+                    new Object[]{getProcessContext().getImportFile()},
+                    Locale.getDefault()));
+            log.info(e.getMessage());
         }
 
         log.info(msg.getMessage("processstartdone",
@@ -93,7 +96,10 @@ public class PinImportProcess extends RuAbstractProcess implements FeedHandler {
     public void afterProcess() {
         List<Pin> pins = pinService.getPinsOnBoard(user.getUsername(), board.getName());
         for (Pin i : pins) {
-            System.out.println(i);
+            System.out.println(i.getBoard() + "\n" +
+                                i.getDescription() + "\n" +
+                                i.getLink() + "\n" +
+                                i.getCreated() + "\n");
         }
     }
 }
