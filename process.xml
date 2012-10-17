@@ -39,13 +39,10 @@
 
     <bean id="boardBean" class="is.ru.honn.rupin.domain.Board">
         <property name="name">
-            <value>User01</value>
+            <value>Board01</value>
         </property>
         <property name="category">
             <value>Technology</value>
-        </property>
-        <property name="pins">
-            <value>pins????????????????????</value>
         </property>
     </bean>
 
