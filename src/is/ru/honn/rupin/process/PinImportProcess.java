@@ -27,8 +27,8 @@ import java.util.logging.Logger;
  * Time: 09:05
  */
 public class PinImportProcess extends RuAbstractProcess implements FeedHandler {
-    // skoða F11+Process+Design+A.avi 34:53mín
 
+    // skoða F11+Process+Design+A.avi 34:53mín
     Logger log = Logger.getLogger(this.getClass().getName());
     PinService pinService;
     FeedReader reader;
