@@ -2,6 +2,7 @@ package is.ru.honn.rupin.domain;
 
 public class User
 {
+  protected int id;
   protected String username;
   protected String firstName;
   protected String lastName;
@@ -21,6 +22,16 @@ public class User
     this.email = email;
     this.password = password;
     this.gender = gender;
+  }
+
+  public int getId()
+  {
+      return id;
+  }
+
+  public void setId(int id)
+  {
+      this.id = id;
   }
 
   public String getUsername()
