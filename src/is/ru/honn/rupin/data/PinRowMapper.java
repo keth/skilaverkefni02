@@ -12,12 +12,12 @@ import java.sql.SQLException;
  * Date: 23.10.2012
  * Háskólinn í Reykjavík
  * Hönnun og smíði hugbúnaðar
- * To change this template use File | Settings | File Templates.
+ * @author Birgir S. Ásþórsson og Kristján Eldjárn Þóroddsson
+ *
+ * pinRowMapper sér um að ná í gildi úr tölflu
  */
 public class PinRowMapper implements ParameterizedRowMapper<Pin>
 {
-
-   // @Override
     public Pin mapRow(ResultSet rs, int rowNum) throws SQLException
     {
         Pin pin = new Pin(rs.getString("username"),

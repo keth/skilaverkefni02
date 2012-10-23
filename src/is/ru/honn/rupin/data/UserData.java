@@ -17,12 +17,19 @@ import java.util.Map;
  * Date: 23.10.2012
  * Háskólinn í Reykjavík
  * Hönnun og smíði hugbúnaðar
- * To change this template use File | Settings | File Templates.
+ * @author Birgir S. Ásþórsson og Kristján Eldjárn Þóroddsson
+ *
+ * Útfærsla á UserDataGateway
+ * Sér um tengingu við gagnagrunn fyrir users
  */
 public class UserData extends RuData implements UserDataGateway
 {
 
-  //  @Override
+    /**
+     * addUser tekur saman upplýsingar um notendur og færir þær yfir í gagnagrunn
+     * @param user
+     * @return
+     */
     public int addUser(User user)
     {
         SimpleJdbcInsert insertContent =
@@ -53,7 +60,11 @@ public class UserData extends RuData implements UserDataGateway
         return returnKey;
     }
 
- //   @Override
+    /**
+     * getUserByUsername finnur user í gagnagrunni út frá usernafni
+     * @param username
+     * @return
+     */
     public User getUserByUsername(String username)
     {
         JdbcTemplate queryResult = new JdbcTemplate(getDataSource());

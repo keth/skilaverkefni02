@@ -11,10 +11,13 @@ import java.util.List;
  * Date: 23.10.2012
  * Háskólinn í Reykjavík
  * Hönnun og smíði hugbúnaðar
- * To change this template use File | Settings | File Templates.
+ * @author Birgir S. Ásþórsson og Kristján Eldjárn Þóroddsson
+ *
+ * Gátt fyrir board tengingu í gagnagrunn
  */
 public interface BoardDataGateway extends RuDataAccess
 {
     public void addBoard(Board board);
     public List<Board> getBoardsByUsername(String username);
+    public Board getBoard(String boardname, String username);
 }

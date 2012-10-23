@@ -14,37 +14,18 @@
         <property name="processClass">
             <value>is.ru.honn.rupin.process.PinImportProcess</value>
         </property>
-    </bean>
 
-    <bean id="userBean" class="is.ru.honn.rupin.domain.User">
-        <property name="username">
-            <value>User01</value>
-        </property>
-        <property name="firstName">
-            <value>Hattur</value>
-        </property>
-        <property name="lastName">
-            <value>Fattur</value>
-        </property>
-        <property name="email">
-            <value>hattu@fattur.is</value>
-        </property>
-        <property name="password">
-            <value>password123</value>
-        </property>
-        <property name="gender">
-            <value>MALE</value>
+        <property name="params">
+            <map>
+                <entry key="username" value="Percy"/>
+                <entry key="firstName" value="Robert"/>
+                <entry key="lastName" value="Plant"/>
+                <entry key="email" value="Robert@ledZeppelin.com"/>
+                <entry key="password" value="Goodtimesbadtimes"/>
+                <entry key="gender" value="MALE"/>
+                <entry key="name" value="Zeppelin"/>
+                <entry key="category" value="GreatMusic"/>
+            </map>
         </property>
     </bean>
-
-    <bean id="boardBean" class="is.ru.honn.rupin.domain.Board">
-        <property name="name">
-            <value>Board01</value>
-        </property>
-        <property name="category">
-            <value>Technology</value>
-        </property>
-    </bean>
-
-
 </beans>

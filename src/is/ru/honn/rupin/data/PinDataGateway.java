@@ -11,7 +11,9 @@ import java.util.List;
  * Date: 23.10.2012
  * Háskólinn í Reykjavík
  * Hönnun og smíði hugbúnaðar
- * To change this template use File | Settings | File Templates.
+ * @author Birgir S. Ásþórsson og Kristján Eldjárn Þóroddsson
+ *
+ * Gátt fyrir pin tengingu í gagnagrunn
  */
 public interface PinDataGateway extends RuDataAccess
 {

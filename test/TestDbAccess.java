@@ -66,7 +66,7 @@ public class TestDbAccess
 
         System.out.println(userDataGateway.getUserByUsername("freddie"));
         System.out.println(boardDataGateway.getBoardsByUsername("Jonas"));
-/       System.out.println(pinDataGateway.getPinsOnBoard("Jonas", "hestur1"));
+        System.out.println(pinDataGateway.getPinsOnBoard("Jonas", "hestur1"));
 
 
 

@@ -16,10 +16,19 @@ import java.util.Map;
  * Date: 23.10.2012
  * Háskólinn í Reykjavík
  * Hönnun og smíði hugbúnaðar
- * To change this template use File | Settings | File Templates.
+ * @author Birgir S. Ásþórsson og Kristján Eldjárn Þóroddsson
+ *
+ * Útfærsla á PinDataGateway
+ * Sér um tengingu við gagnagrunn fyrir pins
  */
 public class PinData extends RuData implements PinDataGateway
 {
+    /**
+     * addPin sér um að taka saman upplýsingar fyrir pin og setja pinna í gagnagrunn
+     *
+     * @param pin
+     * @return
+     */
     public int addPin(Pin pin)
     {
         SimpleJdbcInsert insertPin =
@@ -46,12 +55,18 @@ public class PinData extends RuData implements PinDataGateway
         return returnKey;
     }
 
+    /**
+     * getPinsOnBoard sækir alla pinna sem tengdir eru ákveðnu usernam og boardname
+     *
+     * @param username
+     * @param boardname
+     * @return
+     */
     public List<Pin> getPinsOnBoard(String username, String boardname)
     {
         JdbcTemplate queryForPins = new JdbcTemplate(getDataSource());
         List<Pin> pins = queryForPins.query("select * from ru_pins where username = ? AND where boardname = ? ",
                 new PinRowMapper());
-
         return pins;
     }
 }

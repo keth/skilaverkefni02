@@ -13,10 +13,20 @@ import java.sql.SQLException;
  * Date: 23.10.2012
  * Háskólinn í Reykjavík
  * Hönnun og smíði hugbúnaðar
- * To change this template use File | Settings | File Templates.
+ *
+ * @author Birgir S. Ásþórsson og Kristján Eldjárn Þóroddsson
+ *
+ * UserRowMapper nær í gildi fyrir user úr töflu
  */
 public class UserRowMapper implements ParameterizedRowMapper
 {
+    /**
+     *
+     * @param rs
+     * @param rowNum
+     * @return
+     * @throws SQLException
+     */
     public User mapRow(ResultSet rs, int rowNum) throws SQLException
     {
         User user = new User(rs.getString(2),

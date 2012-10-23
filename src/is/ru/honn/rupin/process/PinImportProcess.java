@@ -25,10 +25,11 @@ import java.util.logging.Logger;
  * Kristján Eldjárn Þóroddsson
  * Date: 15.10.2012
  * Time: 09:05
+ * @author Birgir S. Ásþórsson og Kristján Eldjárn Þóroddsson
  */
 public class PinImportProcess extends RuAbstractProcess implements FeedHandler {
 
-    // skoða F11+Process+Design+A.avi 34:53mín
+
     Logger log = Logger.getLogger(this.getClass().getName());
     PinService pinService;
     FeedReader reader;
