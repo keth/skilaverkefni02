@@ -18,7 +18,7 @@ public class BoardRowMapper implements ParameterizedRowMapper
 {
     public Board mapRow(ResultSet rs, int rowNum) throws SQLException
     {
-        Board board = new Board(rs.getString("bordname"),
+        Board board = new Board(rs.getString("boardname"),
                                 rs.getString("category"));
    //     User user = new User();
      //   user.setUsername(rs.getString(3));
