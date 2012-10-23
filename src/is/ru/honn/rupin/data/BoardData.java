@@ -21,49 +21,41 @@ import java.util.Map;
 public class BoardData extends RuData implements BoardDataGateway
 {
 
-    @Override
+    //@Override
     public void addBoard(Board board)
     {
         SimpleJdbcInsert insertBoard =
                 new SimpleJdbcInsert(getDataSource())
                 .withTableName("ru_boards");
 
-
         Map<String, Object> parameters = new HashMap<String, Object>(3);
         parameters.put("boardname", board.getName());
         parameters.put("category", board.getCategory());
-        parameters.put("username", board.getCreator());
+        parameters.put("username", "Jonas");
+       // parameters.put("username", board.getCreator());
         //parameters.put("created", board.getCreated());
-        insertBoard.execute(parameters);
 
-        /*int returnKey = 0;
+
         try
         {
-            returnKey = insertBoard.execute(parameters);
+            insertBoard.execute(parameters);
         }
         catch (DataIntegrityViolationException divex)
         {
             log.warning("Board with same name exists");
         }
 
-        return returnKey; */
     }
 
-    @Override
-    public List<Board> getBoards()
-    {
-        JdbcTemplate queryForBoards = new JdbcTemplate(getDataSource());
-        List<Board> boards = queryForBoards.query("select * from ru_boards",
-                new BoardRowMapper());
+    public List<Board> getBoardsByUsername(String username) {
+        JdbcTemplate queryBoardsByUsername = new JdbcTemplate(getDataSource());
+        String select = "select * from ru_boards where username = ?";
+        List<Board> boards = queryBoardsByUsername.query(select, new Object[]{username}, new BoardRowMapper());
         return boards;
     }
 
-    @Override
-    public Board getBoard(String boardname, String username)
-    {
-        JdbcTemplate queryForBoard = new JdbcTemplate(getDataSource());
-        List<Board> boards = queryForBoard.query("select * from ru_boards where boardname=? and username=?",
-                new BoardRowMapper(), new Object[]{boardname, username});
-        return boards.get(0);
-    }
+
+    //todo: getBoard(username , boardname)
+
+
 }

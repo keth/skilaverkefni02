@@ -26,10 +26,13 @@ public class PinData extends RuData implements PinDataGateway
                 new SimpleJdbcInsert(getDataSource())
                 .withTableName("ru_pins");
 
-        Map<String, Object>parameters = new HashMap<String, Object>(2);
+        Map<String, Object>parameters = new HashMap<String, Object>(5);
 
-        parameters.put("Link", pin.getLink());
         parameters.put("description", pin.getDescription());
+        parameters.put("link", pin.getLink());
+        parameters.put("image", pin.getImage());
+        parameters.put("boardname", "hestur1");
+        parameters.put("username", pin.getCreator());
 
         int returnKey = 0;
         try
@@ -46,7 +49,7 @@ public class PinData extends RuData implements PinDataGateway
     public List<Pin> getPinsOnBoard(String username, String boardname)
     {
         JdbcTemplate queryForPins = new JdbcTemplate(getDataSource());
-        List<Pin> pins = queryForPins.query("select * from ru_pins where username=?",
+        List<Pin> pins = queryForPins.query("select * from ru_pins where username = ? AND where boardname = ? ",
                 new PinRowMapper());
 
         return pins;

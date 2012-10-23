@@ -1,7 +1,6 @@
 package is.ru.honn.rupin.data;
 
 import is.ru.honn.rupin.domain.Board;
-import is.ru.honn.rupin.domain.User;
 import org.springframework.jdbc.core.simple.ParameterizedRowMapper;
 
 import java.sql.ResultSet;
@@ -19,14 +18,11 @@ public class BoardRowMapper implements ParameterizedRowMapper
 {
     public Board mapRow(ResultSet rs, int rowNum) throws SQLException
     {
-        User user = new User();
-        Board board = new Board(rs.getString(1),      //boardname
-                                rs.getString(2));     //category
-
-        user.setUsername(rs.getString(3));
-        //user.setUsername(rs.getString(3));
-        //board.setCreated(rs.getDate(4));
-        board.setCreator(user);
+        Board board = new Board(rs.getString("boardname"),
+                                rs.getString("category"));
+   //     User user = new User();
+     //   user.setUsername(rs.getString(3));
+     //   board.setCreator(user);
 
         return board;
     }

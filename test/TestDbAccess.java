@@ -1,7 +1,9 @@
 import is.ru.honn.rupin.data.BoardDataGateway;
+import is.ru.honn.rupin.data.PinDataGateway;
 import is.ru.honn.rupin.data.UserDataGateway;
 import is.ru.honn.rupin.domain.Board;
 import is.ru.honn.rupin.domain.Gender;
+import is.ru.honn.rupin.domain.Pin;
 import is.ru.honn.rupin.domain.User;
 import is.ruframework.data.RuDataAccessFactory;
 import is.ruframework.domain.RuException;
@@ -53,7 +55,18 @@ public class TestDbAccess
                 new Board("board1", "category1")
         );
 
+
+        PinDataGateway pinDataGateway =
+                        (PinDataGateway)factory.getDataAccess("pinDataAccess");
+
+        pinDataGateway.addPin(
+                new Pin("link", "bescription", "smu")
+        );
+
+
         System.out.println(userDataGateway.getUserByUsername("freddie"));
+        System.out.println(boardDataGateway.getBoardsByUsername("Jonas"));
+/       System.out.println(pinDataGateway.getPinsOnBoard("Jonas", "hestur1"));
 
 
 
