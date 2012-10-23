@@ -13,10 +13,10 @@
             <value>jdbc:jtds:sqlserver://hrnem.ru.is:1433</value>
         </property>
         <property name="username">
-            <value>hshbirgira07</value>
+            <value>hshkristjant08</value>
         </property>
         <property name="password">
-            <value>of7ej8</value>
+            <value>klcx3e</value>
         </property>
     </bean>
 

@@ -22,7 +22,7 @@ import java.util.Map;
 public class UserData extends RuData implements UserDataGateway
 {
 
-    @Override
+  //  @Override
     public int addUser(User user)
     {
         SimpleJdbcInsert insertContent =
@@ -53,7 +53,7 @@ public class UserData extends RuData implements UserDataGateway
         return returnKey;
     }
 
-    @Override
+ //   @Override
     public User getUserByUsername(String username)
     {
         JdbcTemplate queryResult = new JdbcTemplate(getDataSource());
@@ -61,7 +61,7 @@ public class UserData extends RuData implements UserDataGateway
         try
         {
             user = (User)queryResult.queryForObject(
-                    "select * from ru_users where username=?", new UserRowMapper(), username);
+                    "select * from ru_users where username = ? ", new UserRowMapper(), username);
         }
         catch (EmptyResultDataAccessException erdae)
         {
