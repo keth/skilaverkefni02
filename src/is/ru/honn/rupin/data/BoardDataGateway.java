@@ -17,5 +17,5 @@ public interface BoardDataGateway extends RuDataAccess
 {
     public void addBoard(Board board);
     public List<Board> getBoards();
-    public Board getBoard(String boardname, String username);
+    public Board getBoard(String username, String boardname);
 }

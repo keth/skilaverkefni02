@@ -39,7 +39,7 @@ public class PinServiceStub implements PinService
   {
     User user = getUser(username);
     if(user == null)
-      throw new UserNotFoundException("User not found");
+      throw new UserNotFoundException("user not found");
 
     Board newBoard = new Board(name, category);
 
@@ -58,6 +58,7 @@ public class PinServiceStub implements PinService
     newPin.setBoard(b);
     newPin.setLink(link);
     newPin.setDescription(description);
+    newPin.setCreator(getUser(username));
     b.addPin(newPin);
     return newPin;
   }

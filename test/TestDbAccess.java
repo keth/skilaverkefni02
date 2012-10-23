@@ -50,7 +50,7 @@ public class TestDbAccess
                 (BoardDataGateway)factory.getDataAccess("boardDataAccess");
 
         boardDataGateway.addBoard(
-                new Board("hestur1", "cat1")
+                new Board("board1", "category1")
         );
 
         System.out.println(userDataGateway.getUserByUsername("freddie"));
