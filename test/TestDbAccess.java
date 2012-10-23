@@ -44,6 +44,9 @@ public class TestDbAccess
                 new User("patti", "Patti", "Smith", "patti@gmail.com", "12543", Gender.FEMALE)
         );
 
+        System.out.println(userDataGateway.getUserByUsername("freddie"));
+
+
 
     }
 }
