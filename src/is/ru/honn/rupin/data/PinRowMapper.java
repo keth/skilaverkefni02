@@ -17,13 +17,13 @@ import java.sql.SQLException;
 public class PinRowMapper implements ParameterizedRowMapper<Pin>
 {
 
-    @Override
+   // @Override
     public Pin mapRow(ResultSet rs, int rowNum) throws SQLException
     {
-        Pin board = new Pin(rs.getString(1),
-                rs.getString(2),
-                rs.getString(3));
+        Pin pin = new Pin(rs.getString("username"),
+                rs.getString("boardname"),
+                rs.getString("link"));
 
-        return board;
+        return pin;
     }
 }

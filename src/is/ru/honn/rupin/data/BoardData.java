@@ -12,7 +12,7 @@ import java.util.Map;
 
 /**
  * Created with IntelliJ IDEA.
- * User: Birgir Ásþórsson
+ * User: Birgir Ásþórsson & Krist´jajflksj
  * Date: 23.10.2012
  * Háskólinn í Reykjavík
  * Hönnun og smíði hugbúnaðar
@@ -53,6 +53,9 @@ public class BoardData extends RuData implements BoardDataGateway
         List<Board> boards = queryBoardsByUsername.query(select, new Object[]{username}, new BoardRowMapper());
         return boards;
     }
+
+
+    //todo: getBoard(username , boardname)
 
 
 }

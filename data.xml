@@ -27,5 +27,6 @@
 
     <bean id="userDataAccess" class="is.ru.honn.rupin.data.UserData"/>
     <bean id="boardDataAccess" class="is.ru.honn.rupin.data.BoardData" />
+    <bean id="pinDataAccess" class="is.ru.honn.rupin.data.PinData" />
 
 </beans>
