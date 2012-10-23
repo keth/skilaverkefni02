@@ -19,7 +19,8 @@ public class Board extends PinObject
     this.category = category;
   }
 
-  public Pin addPin(Pin pin)
+
+    public Pin addPin(Pin pin)
   {
     pins.add(pin);
     return pin;

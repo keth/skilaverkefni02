@@ -1,4 +1,6 @@
+import is.ru.honn.rupin.data.BoardDataGateway;
 import is.ru.honn.rupin.data.UserDataGateway;
+import is.ru.honn.rupin.domain.Board;
 import is.ru.honn.rupin.domain.Gender;
 import is.ru.honn.rupin.domain.User;
 import is.ruframework.data.RuDataAccessFactory;
@@ -42,6 +44,13 @@ public class TestDbAccess
 
         userDataGateway.addUser(
                 new User("patti", "Patti", "Smith", "patti@gmail.com", "12543", Gender.FEMALE)
+        );
+
+        BoardDataGateway boardDataGateway =
+                (BoardDataGateway)factory.getDataAccess("boardDataAccess");
+
+        boardDataGateway.addBoard(
+                new Board("hestur1", "cat1")
         );
 
         System.out.println(userDataGateway.getUserByUsername("freddie"));
